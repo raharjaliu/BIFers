@@ -32,6 +32,41 @@
 	\end{itemize}
 \end{frame}
 
+\begin{frame}{Definition}
+	\begin{itemize}
+		\item \textbf{RNA/DNA Binding Protein prediction}: given a protein, determine whether a protein is RNA/DNA binding.
+		\item \textbf{RNA/DNA binding site prediction}: given a protein sequence, determine side chains that bind with a DNA/RNA.
+	\end{itemize}
+\end{frame}
 
+\begin{frame}{Methods: abstraction level}
+	\begin{figure}[ht]
+		\begin{center}
+			\includegraphics[height=2.5in]{ss_1.png}
+			~\footnote{Si, Wu \textit{et al.}, 2015, \textit{Int. J. Mol. Sci.}}
+		\end{center}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Possible Features}
+	Sequence-based features:
+	\begin{itemize}
+		\item \textbf{Amino acid composition}.
+		\item \textbf{Sequence similarity,} such as MSA.
+		\item \textbf{Evolutionary invormation,} such as PSSM. 
+		\item \textbf{Evolutionary invormation,} such as PSSM. 
+	\end{itemize}
+	Structure-based features:
+	\begin{itemize}
+		\item \textbf{Secondary structure:} experimental (assigned using DSSPcont) or predicted.
+		\item \textbf{Accessible surface area,} in percnent (\%).
+	\end{itemize}
+	Chemical and physical features:
+	\begin{itemize}
+		\item \textbf{Hydrophobicity.}
+		\item \textbf{Electrostatic patches.}
+		\item \textbf{Cleft Size.}
+	\end{itemize}
+\end{frame}
 
 \end{document}
