@@ -1,0 +1,112 @@
+=== Iteration A  ===
+Checking input parameters...
+Creating work dir...
+Created /tmp/tmpPFnk2O/work_dir_A
+Parsing input fasta file...
+Parsing input cluster file...
+Creating splits...
+Running FormatDB...
+	Running command: /usr/bin/formatdb -i inputFastaCopy.fasta
+
+Blasting... 
+0% done33% done67% done100% done
+Done.
+Creating big error log...
+Error log:
+
+If errors occurred, please investigate how bad they are.
+Will wait 5 secs now.
+	Initalizing output array...
+Parsing blast output files... (Please keep an eye on your RAM usage while you wait. Use -e if you run out of RAM.)
+33% done. 67% done. 100% done. 
+Creating family collection...
+0% done38% done76% done100% done
+Number of sequences before: 264
+Printing family size distribution (size: count)
+	1: 177
+	2: 38
+	3: 11
+	4: 20
+	5: 16
+	6: 2
+Number of sequences after: 213
+Printing family size distribution (size: count)
+	1: 177
+	2: 22
+	3: 4
+	4: 8
+	5: 2
+Checking non redundancy of 213 sequences...
+0% done47% done94% done100% done
+Writing output fasta file...
+
+=== Iteration B  ===
+Checking input parameters...
+Creating work dir...
+Created /tmp/tmpPFnk2O/work_dir_B
+Parsing input fasta file...
+Parsing input cluster file...
+Creating splits...
+Running FormatDB...
+	Running command: /usr/bin/formatdb -i inputFastaCopy.fasta
+
+Blasting... 
+0% done0% done0% done0% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done100% done
+Done.
+Creating big error log...
+Error log:
+
+If errors occurred, please investigate how bad they are.
+Will wait 5 secs now.
+	Initalizing output array...
+Parsing blast output files... (Please keep an eye on your RAM usage while you wait. Use -e if you run out of RAM.)
+33% done. 67% done. 100% done. 
+Creating family collection...
+0% done47% done94% done100% done
+Number of sequences before: 213
+Printing family size distribution (size: count)
+	1: 213
+Number of sequences after: 213
+Printing family size distribution (size: count)
+	1: 213
+Checking non redundancy of 213 sequences...
+0% done47% done94% done100% done
+Writing output fasta file...
+
+=== Iteration C  ===
+Checking input parameters...
+Creating work dir...
+Created /tmp/tmpPFnk2O/work_dir_C
+Parsing input fasta file...
+Parsing input cluster file...
+Creating splits...
+Running FormatDB...
+	Running command: /usr/bin/formatdb -i inputFastaCopy.fasta
+
+Blasting... 
+0% done0% done0% done0% done0% done0% done0% done0% done0% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done33% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done67% done100% done
+Done.
+Creating big error log...
+Error log:
+
+If errors occurred, please investigate how bad they are.
+Will wait 5 secs now.
+	Initalizing output array...
+Parsing blast output files... (Please keep an eye on your RAM usage while you wait. Use -e if you run out of RAM.)
+33% done. 67% done. 100% done. 
+Creating family collection...
+0% done47% done94% done100% done
+Number of sequences before: 213
+Printing family size distribution (size: count)
+	1: 213
+Number of sequences after: 213
+Printing family size distribution (size: count)
+	1: 213
+Checking non redundancy of 213 sequences...
+0% done47% done94% done100% done
+Writing output fasta file...
+
+Deleting temp directories...
+
+====== Uniqueprot finished ======
+

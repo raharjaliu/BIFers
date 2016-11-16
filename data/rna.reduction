@@ -1,0 +1,113 @@
+=== Iteration A  ===
+Checking input parameters...
+Creating work dir...
+Created /tmp/tmphWiEKo/work_dir_A
+Parsing input fasta file...
+Parsing input cluster file...
+Creating splits...
+Running FormatDB...
+	Running command: /usr/bin/formatdb -i inputFastaCopy.fasta
+
+Blasting... 
+0% done20% done40% done60% done80% done100% done
+Done.
+Creating big error log...
+Error log:
+
+If errors occurred, please investigate how bad they are.
+Will wait 5 secs now.
+	Initalizing output array...
+Parsing blast output files... (Please keep an eye on your RAM usage while you wait. Use -e if you run out of RAM.)
+20% done. 40% done. 60% done. 80% done. 100% done. 
+Creating family collection...
+0% done23% done45% done68% done91% done100% done
+Number of sequences before: 442
+Printing family size distribution (size: count)
+	1: 294
+	2: 87
+	3: 28
+	4: 16
+	5: 15
+	6: 1
+	7: 1
+Number of sequences after: 358
+Printing family size distribution (size: count)
+	1: 294
+	2: 47
+	3: 10
+	4: 4
+	5: 3
+Checking non redundancy of 358 sequences...
+0% done28% done56% done84% done100% done
+Writing output fasta file...
+
+=== Iteration B  ===
+Checking input parameters...
+Creating work dir...
+Created /tmp/tmphWiEKo/work_dir_B
+Parsing input fasta file...
+Parsing input cluster file...
+Creating splits...
+Running FormatDB...
+	Running command: /usr/bin/formatdb -i inputFastaCopy.fasta
+
+Blasting... 
+0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done100% done
+Done.
+Creating big error log...
+Error log:
+
+If errors occurred, please investigate how bad they are.
+Will wait 5 secs now.
+	Initalizing output array...
+Parsing blast output files... (Please keep an eye on your RAM usage while you wait. Use -e if you run out of RAM.)
+25% done. 50% done. 75% done. 100% done. 
+Creating family collection...
+0% done28% done56% done84% done100% done
+Number of sequences before: 358
+Printing family size distribution (size: count)
+	1: 358
+Number of sequences after: 358
+Printing family size distribution (size: count)
+	1: 358
+Checking non redundancy of 358 sequences...
+0% done28% done56% done84% done100% done
+Writing output fasta file...
+
+=== Iteration C  ===
+Checking input parameters...
+Creating work dir...
+Created /tmp/tmphWiEKo/work_dir_C
+Parsing input fasta file...
+Parsing input cluster file...
+Creating splits...
+Running FormatDB...
+	Running command: /usr/bin/formatdb -i inputFastaCopy.fasta
+
+Blasting... 
+0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done0% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done25% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done50% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done75% done100% done
+Done.
+Creating big error log...
+Error log:
+
+If errors occurred, please investigate how bad they are.
+Will wait 5 secs now.
+	Initalizing output array...
+Parsing blast output files... (Please keep an eye on your RAM usage while you wait. Use -e if you run out of RAM.)
+25% done. 50% done. 75% done. 100% done. 
+Creating family collection...
+0% done28% done56% done84% done100% done
+Number of sequences before: 358
+Printing family size distribution (size: count)
+	1: 358
+Number of sequences after: 358
+Printing family size distribution (size: count)
+	1: 358
+Checking non redundancy of 358 sequences...
+0% done28% done56% done84% done100% done
+Writing output fasta file...
+
+Deleting temp directories...
+
+====== Uniqueprot finished ======
+
