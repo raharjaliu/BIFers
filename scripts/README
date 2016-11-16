@@ -1,0 +1,5 @@
+To transfer the binding data into FASTA, run following command:
+
+'''
+python2.7 transform_binding_files_to_fasta.py ../data/bindingprots/dna.out ../data/bindingprots/rna.out ../data/dna.fasta ../data/rna.fasta
+'''
