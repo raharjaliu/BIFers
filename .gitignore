@@ -294,3 +294,7 @@ TSWLatexianTemp*
 
 # auto folder when using emacs and auctex 
 /auto/*
+
+# DS_Store
+.DS_Store
+data/.DS_Store
