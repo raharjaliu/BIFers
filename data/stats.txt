@@ -6,6 +6,7 @@ negative_all_cdhit: 207737 (70%)
 negative_human: 20005
 negative_human_reduced: 1813 (hval: 0)
 
+target_dna: 264
+target_rna: 442
 target_dna_reduced: 213
 target_rna_reduced: 358
-

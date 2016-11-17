@@ -10,7 +10,7 @@
 \newcommand\bayeseq{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily Bayes}}}{=}}}
 
 %% preamble
-\title{Prediction of RNA and DNA binding sites: preliminary presentation}
+\title{Prediction of RNA and DNA binding sites: weekly report}
 \subtitle{}
 \author[shortname]{Pandu Raharja \inst{1, 2} \and Julian Schmidt \inst{1, 2}}
 \institute[shortinst]{\inst{1} Technische Universit\"at M\"unchen \and %
@@ -25,12 +25,41 @@
 %% normal frame
 \begin{frame}{Outline}
 	\begin{itemize}
-		\item Binding prediction and CAFA.
-		\item Background: RNA and RNA binding proteins.
-		\item Steps  
-		\item Preliminary results: datasets.  
+		\item What we did.
+		\item Problems.  
 	\end{itemize}
 \end{frame}
 
+\begin{frame}{Repository and Datasets}
+	\begin{itemize}
+		\item Scripts and results could be found in \href{https://github.com/raharjaliu/BIFers}{https://github.com/raharjaliu/BIFers} (except for huge files)
+		\item \textbf{To Jonas:} input data for \texttt{profkernel} could be found at \texttt{/mnt/project/pp2\_1617/xna\_raharjaschmidt}.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Stats}
+
+	Results of redundancy reduction on training and negative sets:\\
+	\begin{center}
+		\begin{tabular}{| c | c |}
+			\hline
+			Category & numbers \\
+			\hline
+			negative\_all & 539298\\
+			negative\_all\_cdhit (default params: 90\% ID) & 317077 \\  
+			negative\_all\_cdhit (80\% ID) & 256898  \\
+			negative\_all\_cdhit (70\% ID) & 207737 \\ 
+			negative\_human & 20005 \\
+			negative\_human\_reduced (hval: 0) & 1813 \\ 
+			\hline
+			target\_dna & 264 \\
+			target\_rna & 442 \\
+			target\_dna\_reduced (hval: 20) & 213 \\
+			target\_rna\_reduced (hval: 20) & 358 \\
+			\hline
+		\end{tabular}
+	\end{center}
+
+\end{frame}
 
 \end{document}
