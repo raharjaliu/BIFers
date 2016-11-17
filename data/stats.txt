@@ -1,6 +1,7 @@
 negative_all: 539298
 negative_all_cdhit: 317077 (default params: 90% ID) 
 negative_all_cdhit: 256898 (80% ID) 
+negative_all_cdhit: 207737 (70%)
 
 negative_human: 20005
 negative_human_reduced: 1813 (hval: 0)
