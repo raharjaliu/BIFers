@@ -10,3 +10,19 @@ target_dna: 264
 target_rna: 442
 target_dna_reduced: 213
 target_rna_reduced: 358
+
+
+dna_pos_set_all: 213
+dna_neg_set_all: 1806
+dna_pos_holdout: 21
+dna_neg_holdout: 180
+dna_pos_splits: [64, 64, 64]
+dna_neg_splits: [542, 542, 542]
+
+rna_pos_set_all: 357
+rna_neg_set_all: 1806
+rna_pos_holdout: 35
+rna_neg_holdout: 180
+rna_pos_splits: [107, 107, 107]
+rna_neg_splits: [542, 542, 542]
+
