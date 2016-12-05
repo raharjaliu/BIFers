@@ -53,10 +53,10 @@ def split_files(pos_dir_path, neg_dir_path, out_path, part_holdout, split_num, i
 
 	# split negative set
 	neg_splits = {}
-	split_size = len(neg_split) / 3
+	split_size = len(neg_split) / split_num
 	for this_split in range(split_num):
 		neg_splits[this_split] = neg_split[(this_split * split_size):
-									min(len(neg_split), (this_split + 1) * split_size)]
+									max(len(neg_split), (this_split + 1) * split_size)]
 
 	print "#" * 100
 	print infix + " NEG SPLIT ALL"
@@ -70,7 +70,7 @@ def split_files(pos_dir_path, neg_dir_path, out_path, part_holdout, split_num, i
 	holdout = pos_holdout + neg_holdout
 	holdout_string = '\n'.join([(open(q[0], 'r').read()[:-1] + '\n' + open(q[1], 'r').read()[:-1]) for q in holdout])
 	holdout_string_fasta = '\n'.join([(open(q[0], 'r').read()[:-1]) for q in holdout])
-	holdout_string_profiles = '\n'.join([(open(q[0], 'r').read().split('\n')[0].split(' ')[0] + '\n' + open(q[1], 'r').read()[:-1]) for q in holdout])
+	holdout_string_profiles = '\n\n'.join([(open(q[0], 'r').read().split('\n')[0].split(' ')[0] + '\n' + open(q[1], 'r').read()[:-1]) for q in holdout])
 
 	holdout_file = open(os.path.join(out_path, 'holdout.' + infix) ,'w')
 	holdout_file.write(holdout_string)
