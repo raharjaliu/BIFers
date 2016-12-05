@@ -53,10 +53,12 @@ def split_files(pos_dir_path, neg_dir_path, out_path, part_holdout, split_num, i
 
 	# split negative set
 	neg_splits = {}
-	split_size = len(neg_split) / split_num
+	split_sizes = [len(neg_split) / split_num for x in (range(split_num) + 1)]
+	for i in range(len(neg_split) % split_num):
+		split_sizes[i] += 1
 	for this_split in range(split_num):
-		neg_splits[this_split] = neg_split[(this_split * split_size):
-									max(len(neg_split), (this_split + 1) * split_size)]
+		neg_splits[this_split] = neg_split[(this_split * split_sizes[this_split]):
+									min(len(neg_split), (this_split + 1) * split_sizes[this_split]]
 
 	print "#" * 100
 	print infix + " NEG SPLIT ALL"
