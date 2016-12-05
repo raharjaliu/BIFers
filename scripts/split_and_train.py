@@ -37,10 +37,11 @@ def split_files(pos_dir_path, neg_dir_path, out_path, part_holdout, split_num, i
 
 	# split positive set
 	pos_splits = {}
-	split_size = len(pos_split) / split_num
+	split_sizes = [len(pos_split) / split_num for x in (range(split_num) + 1)]
+	for i in range(len(pos_split) % split_num):
+		split_sizes[i] += 1
 	for this_split in range(split_num):
-		pos_splits[this_split] = pos_split[(this_split * split_size):
-									min(len(pos_split), (this_split + 1) * split_size)]
+		pos_splits[this_split] = pos_split[(this_split * split_sizes[this_split]):
 
 	print "#" * 100
 	print infix + " POS SPLIT ALL"
