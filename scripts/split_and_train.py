@@ -101,8 +101,9 @@ def split_files(pos_dir_path, neg_dir_path, out_path, part_holdout, split_num, i
 
 		print split
 
-		pos_id = '\n'.join([(open(q[0], 'r').read().split('\n')[0].split(' ')[0][1:] + '\t+') for q in pos_splits[split]])
-		neg_id = '\n'.join([(open(q[0], 'r').read().split('\n')[0].split(' ')[0][1:] + '\t-') for q in neg_splits[split]])
+		pos_id = '\n'.join([('>' + open(q[0], 'r').read().split('\n')[0].split(' ')[0][1:] + '\npositive') for q in pos_splits[split]])
+		neg_id = '\n'.join([('>' + open(q[0], 'r').read().split('\n')[0].split(' ')[0][1:] + '\nnegative') for q in neg_splits[split]])
+		class_id = pos_id + '\n' + neg_id
 		this_split = pos_splits[split] + neg_splits[split]
 		this_split_string = '\n'.join([(open(q[0], 'r').read()[:-1] + '\n' + open(q[1], 'r').read()[:-1]) for q in this_split])
 		this_split_string_fasta = '\n'.join([(open(q[0], 'r').read()[:-1]) for q in this_split])
@@ -112,10 +113,10 @@ def split_files(pos_dir_path, neg_dir_path, out_path, part_holdout, split_num, i
 		this_split_file.write(this_split_string)
 		this_split_file.close()
 		this_split_file_fasta = open(os.path.join(out_path, 'split.' + str(split) + '.' + infix + '.fasta') ,'w')
-		this_split_file_fasta.write(holdout_string_fasta)
+		this_split_file_fasta.write(this_split_string_fasta)
 		this_split_file_fasta.close()
 		this_split_file_profile = open(os.path.join(out_path, 'split.' + str(split) + '.' + infix + '.profile') ,'w')
-		this_split_file_profile.write(holdout_string_profiles)
+		this_split_file_profile.write(this_split_string_profiles)
 		this_split_file_profile.close()
 		this_split_pos_list = open(os.path.join(out_path, 'split.' + str(split) + '.' + infix + '.pos.list') ,'w')
 		this_split_pos_list.write(pos_id)
@@ -123,6 +124,9 @@ def split_files(pos_dir_path, neg_dir_path, out_path, part_holdout, split_num, i
 		this_split_neg_list = open(os.path.join(out_path, 'split.' + str(split) + '.' + infix + '.neg.list') ,'w')
 		this_split_neg_list.write(neg_id)
 		this_split_neg_list.close()
+		this_split_class_list = open(os.path.join(out_path, 'split.' + str(split) + '.' + infix + '.class.list') ,'w')
+		this_split_class_list.write(class_id)
+		this_split_class_list.close()
 
 
 if  __name__ =='__main__':
