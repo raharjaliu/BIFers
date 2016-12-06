@@ -2,7 +2,6 @@ import sys
 import math
 import os.path
 import re
-from numpy import np
 
 def split_files(pos_dir_path, neg_dir_path, out_path, part_holdout, split_num, infix):
 
@@ -39,8 +38,8 @@ def split_files(pos_dir_path, neg_dir_path, out_path, part_holdout, split_num, i
 	# split positive set
 	pos_splits = {}
 	split_sizes = []
-	for this_split in range(split_num)
-		split_sizes[this_split] = len(pos_split) / split_num
+	for this_split in range(split_num):
+		split_sizes.append(len(pos_split) / split_num)
 	for this_split in range(len(pos_split) % split_num):
 		split_sizes[this_split] += 1
 	for this_split in range(split_num):
@@ -60,8 +59,8 @@ def split_files(pos_dir_path, neg_dir_path, out_path, part_holdout, split_num, i
 	# split negative set
 	neg_splits = {}
 	split_sizes = []
-	for this_split in range(split_num)
-		split_sizes[this_split] = len(neg_split) / split_num
+	for this_split in range(split_num):
+		split_sizes.append(len(neg_split) / split_num)
 	for i in range(len(neg_split) % split_num):
 		split_sizes[i] += 1
 	for this_split in range(split_num):
