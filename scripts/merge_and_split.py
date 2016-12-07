@@ -106,8 +106,14 @@ def split_files(pos_dir_path, neg_dir_path, out_path, part_holdout, split_num, i
 		class_id = pos_id + '\n' + neg_id
 		this_split = pos_splits[split] + neg_splits[split]
 		this_split_string = '\n'.join([(open(q[0], 'r').read()[:-1] + '\n' + open(q[1], 'r').read()[:-1]) for q in this_split])
-		this_split_string_fasta = '\n'.join([(open(q[0], 'r').read()[:-1]) for q in this_split])
-		this_split_string_profiles = '\n\n'.join([(open(q[0], 'r').read().split('\n')[0].split(' ')[0] + '\n' + open(q[1], 'r').read()[:-1]) for q in this_split])
+		this_split_string_fasta = ''
+		for q in this_split:
+			fasta = open(q[0], 'r').read()[:-1].split('\n')
+			profile = open(q[1], 'r').read()[:-1]
+			idLine = ('|' in fasta[0]) ? '>' + fasta[0].split('|')[1] : fasta[0]
+			this_split_string_fasta += idLine + '\n' + fasta[1] + '\n'
+ 			this_split_string_profiles += idLine + '\n' + profile + '\n\n'
+
 		
 		this_split_file = open(os.path.join(out_path, 'split.' + str(split) + '.' + infix) ,'w')
 		this_split_file.write(this_split_string)
