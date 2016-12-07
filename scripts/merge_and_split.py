@@ -72,14 +72,34 @@ def split_files(pos_dir_path, neg_dir_path, out_path, part_holdout, split_num, i
 	print [len(neg_splits[q]) for q in neg_splits.keys()]
 
 	# combine positive and negative holdout sets and write files
+	pos_id = '\n'.join([(open(q[0], 'r').read().split('\n')[0].split(' ')[0][1:] + '\npositive') for q in pos_holdout])
+	neg_id = '\n'.join([(open(q[0], 'r').read().split('\n')[0].split(' ')[0][1:].split('|')[1] + '\nnegative') for q in neg_holdout])
+	holdout_id = pos_id + '\n' + neg_id
 
-	pos_holdout_id = '\n'.join([(open(q[0], 'r').read().split('\n')[0].split(' ')[0][1:] + '\t+') for q in pos_holdout])
-	neg_holdout_id = '\n'.join([(open(q[0], 'r').read().split('\n')[0].split(' ')[0][1:] + '\t-') for q in neg_holdout])
+	## read and merge both fasta and profile string for positive and negative set
+	holdout_string_pos = '\n'.join([(open(q[0], 'r').read()[:-1] + '\n' + open(q[1], 'r').read()[:-1]) for q in pos_holdout])
+	holdout_string_neg = '\n'.join([('>' + open(q[0], 'r').read()[:-1].split('\n')[0].split(' ')[0].split('|')[1] + 
+										'\n' + open(q[0], 'r').read()[:-1].split('\n')[1] + 
+										'\n' + open(q[1], 'r').read()[:-1]) for q in neg_holdout])
+	holdout_string = holdout_string_pos + '\n' + holdout_string_neg
 
-	holdout = pos_holdout + neg_holdout
-	holdout_string = '\n'.join([(open(q[0], 'r').read()[:-1] + '\n' + open(q[1], 'r').read()[:-1]) for q in holdout])
-	holdout_string_fasta = '\n'.join([(open(q[0], 'r').read()[:-1]) for q in holdout])
-	holdout_string_profiles = '\n\n'.join([(open(q[0], 'r').read().split('\n')[0].split(' ')[0] + '\n' + open(q[1], 'r').read()[:-1]) for q in holdout])
+	## read and merge fasta string for positive and negative set
+	holdout_string_fasta_pos = '\n'.join([(open(q[0], 'r').read()[:-1]) for q in pos_holdout])
+	holdout_string_fasta_neg = '\n'.join([('>' + open(q[0], 'r').read()[:-1].split('\n')[0].split(' ')[0].split('|')[1] + 
+											'\n' + open(q[0], 'r').read()[:-1].split('\n')[1]) for q in neg_holdout])
+	holdout_string_fasta = holdout_string_fasta_pos + '\n' + holdout_string_fasta_neg
+
+	## read and merge profile string for positive and negative set
+	holdout_string_profiles_pos = '\n'.join([(open(q[0], 'r').read().split('\n')[0].split(' ')[0] + 
+												'\n' +open(q[1], 'r').read()[:-1]) for q in pos_holdout])
+	holdout_string_profiles_neg = '\n'.join([('>' + open(q[0], 'r').read()[:-1].split('\n')[0].split(' ')[0].split('|')[1] + 
+												'\n' + open(q[1], 'r').read()[:-1]) for q in neg_holdout])
+	holdout_string_profiles = holdout_string_profiles_pos + '\n' + holdout_string_profiles_neg
+
+	# holdout = pos_holdout + neg_holdout
+	# holdout_string = '\n'.join([(open(q[0], 'r').read()[:-1] + '\n' + open(q[1], 'r').read()[:-1]) for q in holdout])
+	# holdout_string_fasta = '\n'.join([(open(q[0], 'r').read()[:-1]) for q in holdout])
+	# holdout_string_profiles = '\n\n'.join([(open(q[0], 'r').read().split('\n')[0].split(' ')[0] + '\n' + open(q[1], 'r').read()[:-1]) for q in holdout])
 
 	holdout_file = open(os.path.join(out_path, 'holdout.' + infix) ,'w')
 	holdout_file.write(holdout_string)
@@ -91,10 +111,13 @@ def split_files(pos_dir_path, neg_dir_path, out_path, part_holdout, split_num, i
 	holdout_file_profile.write(holdout_string_profiles)
 	holdout_file_profile.close()
 	holdout_pos_list = open(os.path.join(out_path, 'holdout.' + infix + '.pos.list') ,'w')
-	holdout_pos_list.write(pos_holdout_id)
+	holdout_pos_list.write(pos_id)
 	holdout_pos_list.close()
 	holdout_neg_list = open(os.path.join(out_path, 'holdout.' + infix + '.neg.list') ,'w')
-	holdout_neg_list.write(neg_holdout_id)
+	holdout_neg_list.write(neg_id)
+	holdout_neg_list.close()
+	holdout_neg_list = open(os.path.join(out_path, 'holdout.' + infix + '.class.list') ,'w')
+	holdout_neg_list.write(holdout_id)
 	holdout_neg_list.close()
 
 	for split in pos_splits.keys():
@@ -102,12 +125,33 @@ def split_files(pos_dir_path, neg_dir_path, out_path, part_holdout, split_num, i
 		print split
 
 		pos_id = '\n'.join([('>' + open(q[0], 'r').read().split('\n')[0].split(' ')[0][1:] + '\npositive') for q in pos_splits[split]])
-		neg_id = '\n'.join([('>' + open(q[0], 'r').read().split('\n')[0].split(' ')[0][1:] + '\nnegative') for q in neg_splits[split]])
+		neg_id = '\n'.join([('>' + open(q[0], 'r').read().split('\n')[0].split(' ')[0][1:].split('|')[1] + '\nnegative') for q in neg_splits[split]])
 		class_id = pos_id + '\n' + neg_id
-		this_split = pos_splits[split] + neg_splits[split]
-		this_split_string = '\n'.join([(open(q[0], 'r').read()[:-1] + '\n' + open(q[1], 'r').read()[:-1]) for q in this_split])
-		this_split_string_fasta = '\n'.join([(open(q[0], 'r').read()[:-1]) for q in this_split])
-		this_split_string_profiles = '\n\n'.join([(open(q[0], 'r').read().split('\n')[0].split(' ')[0] + '\n' + open(q[1], 'r').read()[:-1]) for q in this_split])
+
+		## read and merge both fasta and profile string for positive and negative set
+		this_split_string_pos = '\n'.join([(open(q[0], 'r').read()[:-1] + '\n' + open(q[1], 'r').read()[:-1]) for q in pos_splits[split]])
+		this_split_string_neg = '\n'.join([('>' + open(q[0], 'r').read()[:-1].split('\n')[0].split(' ')[0].split('|')[1] + 
+											'\n' + open(q[0], 'r').read()[:-1].split('\n')[1] + 
+											'\n' + open(q[1], 'r').read()[:-1]) for q in neg_splits[split]])
+		this_split_string = this_split_string_pos + '\n' + this_split_string_neg
+
+		## read and merge fasta string for positive and negative set
+		this_split_string_fasta_pos = '\n'.join([(open(q[0], 'r').read()[:-1]) for q in pos_splits[split]])
+		this_split_string_fasta_neg = '\n'.join([('>' + open(q[0], 'r').read()[:-1].split('\n')[0].split(' ')[0].split('|')[1] + 
+													'\n' + open(q[0], 'r').read()[:-1].split('\n')[1]) for q in neg_splits[split]])
+		this_split_string_fasta = this_split_string_fasta_pos + '\n' + this_split_string_fasta_neg
+
+		## read and merge profile string for positive and negative set
+		this_split_string_profiles_pos = '\n'.join([(open(q[0], 'r').read().split('\n')[0].split(' ')[0] + 
+														'\n' + open(q[1], 'r').read()[:-1]) for q in pos_splits[split]])
+		this_split_string_profiles_neg = '\n'.join([('>' + open(q[0], 'r').read()[:-1].split('\n')[0].split(' ')[0].split('|')[1] + 
+														'\n' + open(q[1], 'r').read()[:-1]) for q in neg_splits[split]])
+		this_split_string_profiles = this_split_string_profiles_pos + '\n' + this_split_string_profiles_neg
+
+		# this_split = pos_splits[split] + neg_splits[split]
+		# this_split_string = '\n'.join([(open(q[0], 'r').read()[:-1] + '\n' + open(q[1], 'r').read()[:-1]) for q in this_split])
+		# this_split_string_fasta = '\n'.join([(open(q[0], 'r').read()[:-1]) for q in this_split])
+		# this_split_string_profiles = '\n\n'.join([(open(q[0], 'r').read().split('\n')[0].split(' ')[0] + '\n' + open(q[1], 'r').read()[:-1]) for q in this_split])
 		
 		this_split_file = open(os.path.join(out_path, 'split.' + str(split) + '.' + infix) ,'w')
 		this_split_file.write(this_split_string)
