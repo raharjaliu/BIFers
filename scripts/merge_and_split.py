@@ -175,7 +175,7 @@ def split_files(pos_dir_path, neg_dir_path, out_path, part_holdout, split_num, i
 
 if  __name__ =='__main__':
 
-	## merge_and_split.py /mnt/project/pp2_1617/data/xna/splitDNA/ /mnt/project/pp2_1617/data/xna/splitNegativeHumanReduced/ /mnt/project/pp2_1617/data/xna/ppRNA/ /mnt/project/pp2_1617/data/xna/splitNegativeHumanReduced/ /mnt/project/pp2_1617/xna_raharjaschmidt/ 0.1 3
+	## merge_and_split.py /mnt/project/pp2_1617/data/xna/splitDNA/ /mnt/project/pp2_1617/data/xna/splitNegativeHumanReduced/ /mnt/project/pp2_1617/data/xna/splitRNA/ /mnt/project/pp2_1617/data/xna/splitNegativeHumanReduced/ /mnt/project/pp2_1617/xna_raharjaschmidt/ 0.1 3
 
 	dna_pos_set_path = sys.argv[1]
 	dna_neg_set_path = sys.argv[2]
