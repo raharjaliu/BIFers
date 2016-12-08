@@ -140,8 +140,10 @@ if  __name__ =='__main__':
 	create_arff.py /mnt/project/pp2_1617/data/xna/splitDNA/ /mnt/project/pp2_1617/data/xna/ppDNA/ /mnt/project/pp2_1617/data/xna/splitRNA/ /mnt/project/pp2_1617/data/xna/ppRNA/ /mnt/project/pp2_1617/xna_raharjaschmidt/machine_learning/ 3
 
 	2.) call pp features
-	python2.7 pp2features.py -p /mnt/project/pp2_1617/xna_raharjaschmidt/machine_learning/ppDNA2/ -a classfile.arff -f /mnt/project/pp2_1617/xna_raharjaschmidt/machine_learning/pp2features.config --arff-file=/mnt/project/pp2_1617/xna_raharjaschmidt/machine_learning/dna.arff
-	python2.7 pp2features.py -p /mnt/project/pp2_1617/xna_raharjaschmidt/machine_learning/ppRNA2/ -a classfile.arff -f /mnt/project/pp2_1617/xna_raharjaschmidt/machine_learning/pp2features.config --arff-file=/mnt/project/pp2_1617/xna_raharjaschmidt/machine_learning/rna_big.arff
+	python2.7 pp2features.py -p /mnt/project/pp2_1617/xna_raharjaschmidt/machine_learning/ppDNA2/ -a classfile.arff -f /mnt/project/pp2_1617/xna_raharjaschmidt/machine_learning/pp2features.config --arff-file=/mnt/project/pp2_1617/xna_raharjaschmidt/machine_learning/dna_big.arff
+	python2.7 pp2features.py -p /mnt/project/pp2_1617/xna_raharjaschmidt/machine_learning/ppDNA2/ -a classfile.arff -f /mnt/project/pp2_1617/xna_raharjaschmidt/machine_learning/pp2features.config --csv-file=/mnt/project/pp2_1617/xna_raharjaschmidt/machine_learning/dna_big.csv
+	python2.7 pp2features.py -p /mnt/project/pp2_1617/xna_raharjaschmidt/machine_learning/ppRNA2/ -a classfile.arff -f /mnt/project/pp2_1617/xna_raharjaschmidt/machine_learning/pp2features.config --arff-file=/mnt/project/pp2_1617/xna_raharjaschmidt/machine_learning/rna_big.arff 
+	python2.7 pp2features.py -p /mnt/project/pp2_1617/xna_raharjaschmidt/machine_learning/ppRNA2/ -a classfile.arff -f /mnt/project/pp2_1617/xna_raharjaschmidt/machine_learning/pp2features.config --csv-file=/mnt/project/pp2_1617/xna_raharjaschmidt/machine_learning/rna_big.csv
 	"""
 
 	dna_binding_path = sys.argv[1]
