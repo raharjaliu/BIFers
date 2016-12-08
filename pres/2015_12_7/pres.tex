@@ -1,0 +1,103 @@
+\documentclass[pdf]
+{beamer}
+\mode<presentation>{}
+
+\usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{calc}                   
+   
+
+\newcommand\bayeseq{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily Bayes}}}{=}}}
+
+\title{Prediction of RNA and DNA binding sites: weekly report}
+\subtitle{}
+\author[shortname]{Pandu Raharja \inst{1, 2} \and Julian Schmidt \inst{1, 2}}
+\institute[shortinst]{\inst{1} Technische Universit\"at M\"unchen \and %
+                      \inst{2} Ludwig-Maximilians-Universit\"at M\"unchen}
+
+\begin{document}
+
+%% title frame
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+	\begin{itemize}
+		\item What we did:
+		\begin{itemize}
+			\item Julian: xRNA binding prediction
+			\item Pandu: xRNA binding site prediction
+		\end{itemize}
+		\item Problems.  
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{As always:}
+	\begin{itemize}
+		\item Scripts and results could be found in:
+		\href{https://github.com/raharjaliu/BIFers}{https://github.com/raharjaliu/BIFers}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\begin{center}
+		\Large Part I: xRNA binding prediction
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\begin{center}
+		\Large Part II: xRNA binding site prediction
+	\end{center}
+\end{frame}
+
+\begin{frame}{Project Specification}
+	\begin{itemize}
+		\item Java is for enterprise solution.
+		\item Development in Python $\rightarrow$ jupyter, scipy, scikit-learn, (Theano, TensorFlow, CNTK et al. if ever needed)
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Dataset}
+	\begin{itemize}
+		\item We're a bit late into the game due to conference and illness.
+		\item Extracted features could be found in \texttt{/mnt/project/pp2\_1516/xrna\_raharjaschmidt/} \texttt{machine\_learning/\{dna\_big.arff,rna\_big.arff\}}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Extraction of Features on ppDNA2}
+	\begin{itemize}
+		\item query.disis not found.
+		\item Q84ZU4: no significant pfam hit, using default values...
+		\item P03206: no significant pfam hit, using default values...
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Extraction of Features on ppRNA2}
+	\begin{itemize}
+		\item Processing P17574... ParseError: "It seems that we have a situation now. The expected amount of columns is 22, found: \%s!" \% len(tokens)\\
+		\item P24264 \textbf{(idem)}\\
+		\item P67876: no significant pfam hit, using default values...
+		\item P0C206: no significant pfam hit, using default values...
+		\item P0C8P8: no significant pfam hit, using default values...
+		\item P07243: no significant pfam hit, using default values...
+		\item Q57817: no significant pfam hit, using default values...
+		\item P04891: no significant pfam hit, using default values...
+		\item P18683: no significant pfam hit, using default values...
+	\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{References}
+
+	\begin{itemize}
+		\item Feigelman, J. (2016). "Stochastic and deterministic methods for the analysis of Nanog dynamics in mouse embryonic stem cells." PhD Thesis, Technische Universit\"at M\"unchen, Munich, Germany.
+		\item Hoppe, P.S., Schwarzfischer, M., Loeffler, D.,  Kokkaliaris, K.D., Hilsenbeck, O., Mortz, N., ... \& Etzrodt, M. (2016). Early myeloid lineage choice is not initiated by random PU.1 to GATA1 protein ratios. \textit{Nature}, \textbf{535(7611)}, 299-302.
+		\item Graf, T., \& Enver, T. (2009). Forcing cells to change lineages. \textit{Nature}, \textbf{462(7273)}, 587-594.
+	\end{itemize}
+\end{frame}
+
+
+\end{document}

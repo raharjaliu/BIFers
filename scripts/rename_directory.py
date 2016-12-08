@@ -17,6 +17,8 @@ def get_mapping(reduced_file):
 
 if  __name__ =='__main__':
 
+	## rename_directory.py /mnt/project/pp2_1617/xna_raharjaschmidt/dna_reduced.fasta /mnt/project/pp2_1617/xna_raharjaschmidt/rna_reduced.fasta /mnt/project/pp2_1617/xna_raharjaschmidt/machine_learning/ppDNA2/ /mnt/project/pp2_1617/xna_raharjaschmidt/machine_learning/ppRNA2/
+
 	dna_reduced = sys.argv[1]
 	rna_reduced = sys.argv[2]
 	dna_pp_top_path = sys.argv[3]
