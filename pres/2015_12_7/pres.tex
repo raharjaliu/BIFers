@@ -24,10 +24,10 @@
 
 \begin{frame}{Outline}
 	\begin{itemize}
-		\item What we did:
+		\item Who's presenting what:
 		\begin{itemize}
-			\item Julian: xRNA binding prediction
-			\item Pandu: xRNA binding site prediction
+			\item Julian: XNA binding prediction
+			\item Pandu: XNA binding site prediction
 		\end{itemize}
 		\item Problems.  
 	\end{itemize}
@@ -42,7 +42,7 @@
 
 \begin{frame}
 	\begin{center}
-		\Large Part I: xRNA binding prediction
+		\Large Part I: XNA binding prediction
 	\end{center}
 \end{frame}
 
@@ -119,7 +119,7 @@ profkernel-workflow -f /mnt/project/pp2_1617/xna_raharjaschmidt/split.1.dna.fast
 
 \begin{frame}
 	\begin{center}
-		\Large Part II: xRNA binding site prediction
+		\Large Part II: XNA binding site prediction
 	\end{center}
 \end{frame}
 
@@ -157,7 +157,7 @@ profkernel-workflow -f /mnt/project/pp2_1617/xna_raharjaschmidt/split.1.dna.fast
 	Some considerations:
 	\begin{itemize}
 		\item Stack choice: not a big fan of Java but features are contained in ARFF already:\\
-			$\rightarrow$ Weka binding of Python?
+			$\rightarrow$ Weka binding on Python?
 		\item Easy model (SVN, DT/RF etc) vs. sophisticated model (deep representation learning and all the new fancy things coming out of NIPS/ICML 201X):\\
 		$\rightarrow$ Implementation \textbf{will} be constrained by Weka (and time).
 		
@@ -180,10 +180,10 @@ profkernel-workflow -f /mnt/project/pp2_1617/xna_raharjaschmidt/split.1.dna.fast
 \begin{frame}{Example (1)}
 	\begin{itemize}
 		\item Starting the JVM from Python:\\
-			\texttt{import weka.core.jvm as jvm}
+			\texttt{import weka.core.jvm as jvm}\\
 			\texttt{jvm.start()}
 		\item Getting help:\\
-			help(jvm.start)
+			\texttt{help(jvm.start)}
 		\item Loading and printing some data in ARFF format:\\
 			\texttt{from weka.core.converters import Loader}\\
 			\texttt{l = Loader("weka.core.converters.ArffLoader")}\\
@@ -215,11 +215,12 @@ profkernel-workflow -f /mnt/project/pp2_1617/xna_raharjaschmidt/split.1.dna.fast
 	\begin{itemize}
 		\item What constitutes a good predictor?\\
 		\begin{itemize}
-			\item which scoring function to optimize?\\
-			$\rightarrow$ $F_\beta$, recall, coverage?
+			\item which scoring function to optimize:\\
+			$\rightarrow$ $F_{\beta}$, recall, coverage?
 		\end{itemize}
 		\item Relaxed or rigid definition of binding residue?\\
 			\texttt{-!!!-} vs \texttt{-!-!-} vs \texttt{--!!-} vs \texttt{-!!!!}
+		\item Binary vs continuous (very wrong, wrong, kinda correct, correct) classification value.
 		\item etc (what is the meaning of life?)
 	\end{itemize}
 \end{frame}
