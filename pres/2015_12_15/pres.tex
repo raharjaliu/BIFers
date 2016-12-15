@@ -1,0 +1,96 @@
+\documentclass[pdf]
+{beamer}
+\mode<presentation>{}
+
+\usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{calc}                   
+   
+
+\newcommand\bayeseq{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily Bayes}}}{=}}}
+
+\title{Prediction of RNA and DNA binding sites: weekly report}
+\subtitle{}
+\author[shortname]{Pandu Raharja \inst{1, 2} \and Julian Schmidt \inst{1, 2}}
+\institute[shortinst]{\inst{1} Technische Universit\"at M\"unchen \and %
+                      \inst{2} Ludwig-Maximilians-Universit\"at M\"unchen}
+
+\begin{document}
+
+%% title frame
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+	\begin{itemize}
+		\item Who's presenting what:
+		\begin{itemize}
+			\item Julian: XNA binding prediction
+			\item Pandu: XNA binding site prediction
+		\end{itemize}
+		\item Problems.  
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{As always:}
+	\begin{itemize}
+		\item Scripts and results could be found in:
+		\href{https://github.com/raharjaliu/BIFers}{https://github.com/raharjaliu/BIFers}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\begin{center}
+		\Large Part I: XNA binding prediction
+	\end{center}
+\end{frame}
+
+\begin{frame}{Current state}
+	\begin{center}
+	\begin{enumerate}
+	\item Train profkernel: finished (for split 1 and 2)
+	\item Predict binding: finished (for existing models)
+	\item Evaluate predictions for different k and s: Work in progress
+	\end{enumerate}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\begin{center}
+		\Large Part II: XNA binding site prediction
+	\end{center}
+\end{frame}
+
+\begin{frame}{First thing first}
+	\begin{itemize}
+		\item Errors are indeed at \texttt{P17574} and \texttt{P17574}:
+		\begin{itemize}
+			\item Removed \texttt{P17574} or \texttt{P24264}: \texttt{pp2features.py} finishes.
+			\item Included \texttt{P17574} or \texttt{P24264}: \texttt{pp2features.py} crashes.
+			\item Running \textbf{only} \texttt{P17574} or \texttt{P24264}: \texttt{pp2features.py} crashes.
+		\end{itemize}
+		\item Extracted features could be found in \texttt{/mnt/project/pp2\_1516/xrna\_raharjaschmidt/} \texttt{machine\_learning/\{dna\_big.arff,rna\_big.arff\}}.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Machine Learning Sorcery}
+	\begin{itemize}
+		\item \texttt{pp2features.py} exports to csv: py continuation!
+		\begin{itemize}
+			\item jupyter: interactive analysis and reporting
+			\item scikit: features selection + basic ML
+			\item pandas: data manipulation
+			\item etc
+		\end{itemize}
+		\item Analysis runs natively on Python now $\rightarrow$ more coming soon.
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}{References}
+
+\end{frame}
+
+
+\end{document}

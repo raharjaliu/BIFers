@@ -173,6 +173,13 @@ def split_files(pos_dir_path, neg_dir_path, out_path, part_holdout, split_num, i
 		this_split_class_list.close()
 
 
+'''
+Merge RNA's and DNA's positive and negative input data and split it into:
+- holdout set
+- n equal-sized split sets
+
+Author: Pandu Raharja
+'''
 if  __name__ =='__main__':
 
 	## merge_and_split.py /mnt/project/pp2_1617/data/xna/splitDNA/ /mnt/project/pp2_1617/data/xna/splitNegativeHumanReduced/ /mnt/project/pp2_1617/data/xna/splitRNA/ /mnt/project/pp2_1617/data/xna/splitNegativeHumanReduced/ /mnt/project/pp2_1617/xna_raharjaschmidt/ 0.1 3

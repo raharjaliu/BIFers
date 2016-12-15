@@ -132,6 +132,13 @@ def extract_feature_and_write(binding_path, pp_path, split_size):
 		this_arff.close()
 
 
+'''
+Prepare features by dividing into three smaller splits and adding classfile.arff for each set.
+upon calling this script with appropriate arguments pp2features.py will have to be called on the directory containing said script
+(/mnt/home/student/mraharja)
+
+Author: Pandu Raharja
+'''
 if  __name__ =='__main__':
 
 	"""

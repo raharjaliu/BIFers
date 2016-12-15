@@ -15,6 +15,9 @@ def get_mapping(reduced_file):
 
 	return mapping
 
+'''
+Rename ppXNA subdirectories from ordering number to gene id
+'''	
 if  __name__ =='__main__':
 
 	## rename_directory.py /mnt/project/pp2_1617/xna_raharjaschmidt/dna_reduced.fasta /mnt/project/pp2_1617/xna_raharjaschmidt/rna_reduced.fasta /mnt/project/pp2_1617/xna_raharjaschmidt/machine_learning/ppDNA2/ /mnt/project/pp2_1617/xna_raharjaschmidt/machine_learning/ppRNA2/
