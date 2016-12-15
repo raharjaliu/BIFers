@@ -46,12 +46,52 @@
 	\end{center}
 \end{frame}
 
+\begin{frame}{Troubleshooting}
+	\begin{center}
+		\begin{itemize}
+		\item no PSI-BLAST hits (matrix all 0)
+		\begin{itemize}
+		\item Warning: sequence Q96IR3 has an empty profile 
+		\item occurrs in all splits $\Rightarrow$ not the problem
+		\end{itemize}
+		\item diag 0 at xxx error
+		\begin{itemize}
+		\item all 606 proteins:\\
+		diag 0 at 604\\
+		diag 0 at 605
+		\item first 100 proteins:\\
+		diag 0 at 98\\
+		diag 0 at 99 
+		\item only negative proteins (with mock classes): no errors
+		\end{itemize}
+		\end{itemize}
+		$\Rightarrow$ some problem with positive proteins (profiles?)
+	\end{center}
+\end{frame}
+
+\begin{frame}{Performance}
+	\begin{center}
+\begin{tabular}{|l|l|l|l|l|l|l|l|}
+\hline
+model & data & k & s & Accurracy & Sensitivity & Specificty & F1 \\
+\hline
+1 & 2 & 4 & 8 &  0.9422 & 0.5781     &   0.9852 & 0.6789 \\
+\hline
+2 & 1 & 4 & 8 &   0.9455 & 0.6094 &       0.9852 &  0.7027 \\
+\hline
+
+
+
+\end{tabular}
+\end{center}
+\end{frame}
+
 \begin{frame}{Current state}
 	\begin{center}
 	\begin{enumerate}
-	\item Train profkernel: finished (for split 1 and 2)
+	\item Train profkernel: finished (for split.1.dna, split.2.dna, split.0.rna)
 	\item Predict binding: finished (for existing models)
-	\item Evaluate predictions for different k and s: Work in progress
+	\item Evaluate predictions for different k and s: finished for
 	\end{enumerate}
 	\end{center}
 \end{frame}
