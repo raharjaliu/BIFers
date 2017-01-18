@@ -28,7 +28,7 @@ for i in range(0, number_splits):
 			classes[curId] = line[:-1]
 	for j in range(0, number_splits):
 		for s in range(3, 9):
-			for k in range(2, s):
+			for k in range(2, min(7, s)):
 				tp = 0
 				fp = 0
 				tn = 0

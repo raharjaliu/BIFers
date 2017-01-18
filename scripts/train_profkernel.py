@@ -18,7 +18,7 @@ for i in range(0, number_splits):
 	class_file = os.path.join(training_data_dir, training_prefix + '.' + str(i) + '.' + training_infix + '.class.list')
 
 	for s in range(3, 9):
-		for k in range(2, s):
+		for k in range(2, min(7, s)):
 			out_dir = os.path.join(training_output_dir, training_prefix + '.' + str(i) + '.' + training_infix + '.k' + str(k) + 's' + str(s))
 			subprocess.call(['mkdir', out_dir])
 			args = ['profkernel-workflow', '-f', fasta_file, '-p', profile_file, '-l', class_file, '-o', out_dir, '-k', str(k), '-s', str(s)]	
